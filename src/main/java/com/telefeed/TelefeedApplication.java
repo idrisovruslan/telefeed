@@ -9,6 +9,5 @@ import java.util.ArrayList;
 public class TelefeedApplication {
     public static void main(String[] args) {
         SpringApplication.run(TelefeedApplication.class, args);
-        ArrayList<Object> list = new ArrayList<>();
     }
 }
