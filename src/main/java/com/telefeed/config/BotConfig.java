@@ -1,12 +1,12 @@
 package com.telefeed.config;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 
-
+/**
+ * @author Ruslan Idrisov
+ */
 @Configuration("botConfig")
 public class BotConfig extends DefaultBotOptions {
 
