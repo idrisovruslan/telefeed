@@ -1,7 +1,5 @@
 package com.telefeed;
 
-import com.telefeed.config.BotConfig;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramWebhookBot;
@@ -20,10 +18,10 @@ public class TelefeedBot extends TelegramWebhookBot {
     @Value("${telegrambot.webHookPath}")
     private String webHookPath;
 
-    @Autowired
-    public TelefeedBot(BotConfig options) {
-        super(options);
-    }
+//    @Autowired
+//    public TelefeedBot(BotConfig options) {
+//        super(options);
+//    }
 
     @Override
     public BotApiMethod onWebhookUpdateReceived(Update update) {
@@ -50,5 +48,4 @@ public class TelefeedBot extends TelegramWebhookBot {
     public String getBotPath() {
         return webHookPath;
     }
-
 }

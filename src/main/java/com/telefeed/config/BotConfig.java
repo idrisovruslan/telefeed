@@ -3,13 +3,10 @@ package com.telefeed.config;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 
 
-@Getter
-@Setter
 @Configuration("botConfig")
 public class BotConfig extends DefaultBotOptions {
 
@@ -19,10 +16,16 @@ public class BotConfig extends DefaultBotOptions {
     private String proxyHost;
     @Value("${telegrambot.proxyPort}")
     private int proxyPort;
+    @Value("${telegrambot.proxyEnable}")
+    private Boolean proxyEnable;
 
     @Override
     public ProxyType getProxyType() {
-        return proxyType;
+        if (proxyEnable) {
+            return proxyType;
+        } else {
+            return ProxyType.NO_PROXY;
+        }
     }
 
     @Override
