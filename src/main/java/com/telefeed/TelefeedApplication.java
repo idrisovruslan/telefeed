@@ -10,8 +10,6 @@ import java.util.ArrayList;
 public class TelefeedApplication {
     public static void main(String[] args) {
 
-        ApiContextInitializer.init();
-
         SpringApplication.run(TelefeedApplication.class, args);
 
     }
